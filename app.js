@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser'); 
 const cookieParser = require("cookie-parser");
 
-const corse = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 const connectToDatabase = require('./database/connect');
 
 const apiRouter = require('./routes/apiRouter');
@@ -12,7 +12,7 @@ const PORT = 3001;
 const app = express();
 
 connectToDatabase();
-app.use(corse)
+app.use(cors)
 app.use(
     cookieParser(),
     bodyParser.json(),
